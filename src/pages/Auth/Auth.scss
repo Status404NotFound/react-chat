@@ -1,4 +1,4 @@
-.auth{
+.auth {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,10 +7,12 @@
   &__top {
     text-align: center;
     margin-bottom: 50px;
+
     h2 {
       font-size: 28px;
       margin-bottom: 5px;
     }
+
     p {
       font-size: 18px;
       line-height: 21px;
@@ -19,12 +21,29 @@
     }
   }
 
-  &__register-link{
+  &__register-link {
     text-align: center;
     display: block;
     font-size: 16px;
     letter-spacing: 0.1px;
     color: #ADADAD;
+  }
+
+  &__success-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 350px;
+
+    h2 {
+      margin-top: 10px;
+    }
+
+    p {
+      color: #ADADAD;
+    }
   }
 
   .button {
@@ -35,11 +54,12 @@
     width: 100%;
   }
 
-  .block{
+  .block {
     width: 430px;
   }
+
   .site-form-item-icon {
-    color: rgba(0,0,0,.6);
+    color: rgba(0, 0, 0, .6);
     margin-right: 6px;
   }
 }
