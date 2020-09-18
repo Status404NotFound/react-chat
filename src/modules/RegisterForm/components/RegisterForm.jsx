@@ -11,7 +11,7 @@ import {Block, Button} from 'components';
 
 const RegisterForm = () => {
 
-    const [success, setSuccess] = useState(false)
+    const [success] = useState(false)
 
     return (
         <div>
