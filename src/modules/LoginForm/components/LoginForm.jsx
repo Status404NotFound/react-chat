@@ -7,41 +7,27 @@ import {Block, Button} from 'components';
 const LoginForm = () => {
     return (
         <div>
+            <div className={'auth__top'}>
+                <h2>Войти в аккаунт</h2>
+                <p>Пожалуйста, войдите в свой аккаунт</p>
+            </div>
             <Block>
-                <div className={'auth__top'}>
-                    <h2>Войти в аккаунт</h2>
-                    <p>Пожайлуста, войдите в свой аккаунт</p>
-                </div>
                 <Form
                     name="basic"
                     initialValues={{
                         remember: true,
                     }}>
-                    <Form.Item
-                        name="username"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your username!',
-                            },
-                        ]}>
+                    <Form.Item name="username">
                         <Input
-                            placeholder="Username"
+                            placeholder="Имя"
                             size={'large'}
                             prefix={<UserOutlined className="site-form-item-icon"/>}
                         />
                     </Form.Item>
 
-                    <Form.Item
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your password!',
-                            },
-                        ]}>
+                    <Form.Item name="password">
                         <Input
-                            placeholder="Password"
+                            placeholder="Пароль"
                             size={'large'}
                             type={'password'}
                             prefix={<LockOutlined className="site-form-item-icon"/>}
@@ -49,7 +35,7 @@ const LoginForm = () => {
                     </Form.Item>
 
                     <Form.Item name="remember" valuePropName="checked">
-                        <Checkbox>Remember me</Checkbox>
+                        <Checkbox>Запомнить меня</Checkbox>
                     </Form.Item>
 
                     <Form.Item>
