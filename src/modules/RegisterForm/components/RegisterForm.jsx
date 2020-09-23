@@ -9,9 +9,18 @@ import {
 } from "@ant-design/icons";
 import {Block, Button} from 'components';
 
-const RegisterForm = () => {
+const RegisterForm = props => {
 
     const [success] = useState(false)
+
+    const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+    } = props;
 
     return (
         <div>
@@ -22,15 +31,20 @@ const RegisterForm = () => {
             <Block>
                 {!success ? (
                     <Form
-                        name="basic"
-                        initialValues={{
-                            remember: true,
-                        }}>
-                        <Form.Item name="email">
+                        onSubmit={handleSubmit}
+                        name="basic">
+                        <Form.Item validateStatus={
+                            !touched.email ? '' : errors.email ? 'error' : 'success'
+                        }
+                                   hasFeedback>
                             <Input
+                                name={'email'}
                                 placeholder="Email"
                                 size={'large'}
                                 prefix={<MailOutlined className="site-form-item-icon"/>}
+                                value={values.email}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Form.Item>
 
@@ -42,26 +56,40 @@ const RegisterForm = () => {
                             />
                         </Form.Item>
 
-                        <Form.Item name="password">
+                        <Form.Item validateStatus={
+                            !touched.password ? '' : errors.password ? 'error' : 'success'
+                        }
+                                   hasFeedback>
                             <Input
+                                name={'password'}
                                 placeholder="Пароль"
                                 size={'large'}
                                 type={'password'}
                                 prefix={<LockOutlined className="site-form-item-icon"/>}
+                                value={values.password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Form.Item>
 
-                        <Form.Item name="passwordRepeat">
+                        <Form.Item validateStatus={
+                            !touched.passwordRepeat ? '' : errors.passwordRepeat ? 'error' : 'success'
+                        }
+                                   hasFeedback>
                             <Input
+                                name={'passwordRepeat'}
                                 placeholder="Повторите Пароль"
                                 size={'large'}
                                 type={'password'}
                                 prefix={<LockOutlined className="site-form-item-icon"/>}
+                                value={values.passwordRepeat}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Form.Item>
 
                         <Form.Item>
-                            <Button type="primary" size={'large'} htmlType="submit">
+                            <Button onClick={handleSubmit} type="primary" size={'large'} htmlType="submit">
                                 Зарегистрироваться
                             </Button>
                         </Form.Item>

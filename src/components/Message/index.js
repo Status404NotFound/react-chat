@@ -13,7 +13,6 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, attachments }) => (
         <div className="message__content">
             {isMe && isReaded ? (
                 <img
-
                     className="message__icon-readed"
                     src={readedSvg}
                     alt="Readed icon"
@@ -59,6 +58,7 @@ Message.propTypes = {
     user: PropTypes.object,
     isMe: PropTypes.bool,
     isReaded: PropTypes.bool,
+    attachments: PropTypes.array,
 };
 
 export default Message;
