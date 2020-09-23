@@ -4641,6 +4641,11 @@ extsprintf@^1.2.0:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
+eye-react@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/eye-react/-/eye-react-0.0.3.tgz#ff42a1366197809dfa102de167a6bea6a27b9cdf"
+  integrity sha512-MMAZUdEOcGe74tmGaCFmN39coAJqa+2ViCrYS1jMYElIZL0Jtmg1H+7F4+qhBU4vVFOxyQii7QSiVf56ewbImg==
+
 fast-deep-equal@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.1.tgz#545145077c501491e33b15ec408c294376e94ae4"
