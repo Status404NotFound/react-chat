@@ -17,10 +17,8 @@ export default withFormik({
             errors.password = 'Введите пароль';
         } else if (!/(?=.{8,})/i.test(values.password)) {
             errors.password = 'Пароль должен содержать как минимум 8 символов';
-        } else if (!/(?=.*[a-z])/i.test(values.password)) {
-            errors.password = 'Пароль должен содержать как минимум одну букву в нижнем регистре';
-        } else if (!/(?=.*[A-Z])/i.test(values.password)) {
-            errors.password = 'Пароль должен содержать как минимум одну букву в верхнем регистре';
+        } else if (!/(?=.*[a-zA-Z])/i.test(values.password)) {
+            errors.password = 'Пароль должен содержать как минимум одну букву';
         } else if (!/(?=.*[0-9])/i.test(values.password)) {
             errors.password = 'Пароль должен содержать как минимум одну цифру';
         }

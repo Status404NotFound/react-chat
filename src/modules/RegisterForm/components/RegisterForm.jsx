@@ -20,6 +20,8 @@ const RegisterForm = props => {
         handleChange,
         handleBlur,
         handleSubmit,
+        isValid,
+        dirty
     } = props;
 
     return (
@@ -34,8 +36,9 @@ const RegisterForm = props => {
                         onSubmit={handleSubmit}
                         name="basic">
                         <Form.Item validateStatus={
-                            !touched.email ? '' : errors.email ? 'error' : 'success'
+                            !touched.email ? undefined : errors.email ? 'error' : 'success'
                         }
+                                   help={!touched.email ? undefined : errors.email}
                                    hasFeedback>
                             <Input
                                 name={'email'}
@@ -57,8 +60,9 @@ const RegisterForm = props => {
                         </Form.Item>
 
                         <Form.Item validateStatus={
-                            !touched.password ? '' : errors.password ? 'error' : 'success'
+                            !touched.password ? undefined : errors.password ? 'error' : 'success'
                         }
+                                   help={!touched.password ? undefined : errors.password}
                                    hasFeedback>
                             <Input
                                 name={'password'}
@@ -73,8 +77,9 @@ const RegisterForm = props => {
                         </Form.Item>
 
                         <Form.Item validateStatus={
-                            !touched.passwordRepeat ? '' : errors.passwordRepeat ? 'error' : 'success'
+                            !touched.passwordRepeat ? undefined : errors.passwordRepeat ? 'error' : 'success'
                         }
+                                   help={!touched.passwordRepeat ? undefined : errors.passwordRepeat}
                                    hasFeedback>
                             <Input
                                 name={'passwordRepeat'}
@@ -89,9 +94,15 @@ const RegisterForm = props => {
                         </Form.Item>
 
                         <Form.Item>
-                            <Button onClick={handleSubmit} type="primary" size={'large'} htmlType="submit">
-                                Зарегистрироваться
-                            </Button>
+                            {dirty && isValid ?
+                                <Button onClick={handleSubmit} type="primary" size={'large'} htmlType="submit">
+                                    Зарегистрироваться
+                                </Button> :
+                                <Button onClick={handleSubmit} type="primary" size={'large'} htmlType="submit" disabled>
+                                    Зарегистрироваться
+                                </Button>
+                            }
+
                         </Form.Item>
                         <Link className={'auth__register-link'} to={'/login'}>
                             Войти в аккаунт
